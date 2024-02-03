@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de preguntas</title>
+</head>
+<body onload="tiempoRegresivo()">
+    <h1 id="tiempoJuego">30</h1>
+    <input type="text" id="respuesta1" placeholder="¿Capital de Francia?">
+    <input type="text" id="respuesta2" placeholder="(7 * 5) + 10">
+    <input type="text" id="respuesta3" placeholder="Símbolo químico del agua">
+    <input type="text" id="respuesta4" placeholder="¿Año actual?">
+
+    <button onclick="finalizado()">Terminé</button>
+    <button onclick="volverAIntentar()">Volver a Intentar</button>
+
+    <script>
+        let tiempoTerminado
+        let tiempoJuego
+        function tiempoRegresivo() {
+            tiempoCumplido = setTimeout(tiempoCumplido,30000)
+            intervaloTiempo = setInterval(tictac,1000)
+        }
+
+        function tictac() {
+            let tiempo = document.getElementById('tiempoJuego').textContent
+            document.getElementById('tiempoJuego').textContent = tiempo-1
+        }
+
+        function tiempoCumplido() {
+            clearInterval(intervaloTiempo)
+            document.getElementById('tiempoJuego').textContent = 0
+            alert('GAME OVER: Se acabó el tiempo')
+        }
+
+        function finalizado() {
+            clearTimeout(tiempoTerminado)
+            clearInterval(intervaloTiempo)
+
+            let fecha = new Date()
+            let respuesta1 = document.getElementById('respuesta1').value
+            let respuesta2 = document.getElementById('respuesta2').value
+            let respuesta3 = document.getElementById('respuesta3').value
+            let respuesta4 = document.getElementById('respuesta4').value
+
+            let mensaje = fecha.toLocaleDateString("es-ES") + "\n" +
+                            "1. " + respuesta1 + "\n" +
+                            "2. " + respuesta2 + "\n" +
+                            "3. " + respuesta3 + "\n" +
+                            "4. " + respuesta4
+
+            alert(mensaje)
+        }
+
+
+        function volverAIntentar() {
+            location.reload()
+        }
+    </script>
+</body>
+</html>
