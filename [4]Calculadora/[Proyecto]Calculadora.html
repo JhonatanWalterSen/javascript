@@ -9,31 +9,32 @@
 <body class="body">
     <div class="centrado">
         <div class="numeros">
-            <input type="number">
-            <input type="number">
+            <input id="numero1" type="number">
+            <input id="numero2" type="number">
         </div>
         <div class="operaciones">
-            <button>+</button>
-            <button>-</button>
-            <button>x</button>
-            <button>/</button>
+            <button onclick="sumar()">+</button>
+            <button onclick="restar()">-</button>
+            <button onclick="multiplicar()">x</button>
+            <button onclick="dividir()">/</button>
         </div>
         <div class="operaciones">
-            <button>potencia</button>
-            <button>raiz</button>
+            <button onclick="potencia()">potencia</button>
+            <button onclick="raiz()">raiz</button>
         </div>
         <div class="operaciones">
-            <button>absoluto</button>
-            <button>random</button>
+            <button onclick="absoluto()">absoluto</button>
+            <button onclick="random()">random</button>
         </div>
         <div class="numeros">
-            <input type="number">
+            <input id="resultado" type="number">
         </div>
         <div class="operaciones">
-            <button>round</button>
-            <button>floor</button>
-            <button>cell</button>
+            <button onclick="redondear()">round</button>
+            <button onclick="techo()">floor</button>
+            <button onclick="piso()">cell</button>
         </div>
     </div>
+    <script src="app.js"></script>
 </body>
 </html>
